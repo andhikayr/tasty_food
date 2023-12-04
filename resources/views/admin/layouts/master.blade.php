@@ -1,0 +1,9 @@
+@extends('skeleton_dashboard')
+@section('master')
+   @include('admin.layouts.sidebar')
+   @include('admin.layouts.header')
+   @yield('content')
+   @include('admin.layouts.switcher')
+   @include('admin.layouts.overlay-btt-button')
+   @include('admin.layouts.footer')
+@endsection

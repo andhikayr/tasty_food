@@ -1,0 +1,130 @@
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+header {
+	overflow: hidden;
+}
+
+.nav-link:hover {
+	color: red;
+}
+
+.navbar-toggler:focus {
+	outline: red solid 1px !important;
+	box-shadow: none;
+	text-decoration: solid;
+}
+
+.btn-dark:hover {
+	background-color: rgba(0, 0, 0, 0.55);
+}
+
+.link-light:hover {
+	color: rgba(255, 255, 255, 0.55);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: white;
+}
+
+.index-makanan-bg {
+	background-image: url('/ASET/Group 70.png');
+	object-fit: cover;
+}
+
+.index-makanan img {
+	position: relative;
+	top: -100px;
+	width: 200px;
+	height: 200px;
+	margin: auto;
+	margin-bottom: -100px;
+}
+
+.col .index-makanan {
+	border-radius: 15px;
+}
+
+.index-berita {
+	background-color: inherit;
+}
+
+.index-berita img {
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	object-fit: cover;
+}
+
+.index-berita .card-footer {
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+.index-galeri img,
+.index-card-makanan,
+.index-tentang img,
+.index-misi img,
+.index-galeri-headline,
+.index-berita {
+	border-radius: 15px;
+	object-fit: cover;
+}
+
+.kontak-header {
+	background-image: url('/ASET/Group 70.png');
+	background-size: cover;
+}
+
+.form-control {
+	border-radius: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+	opacity: 1;
+}
+
+.arrow-icon-right {
+	transform: translateX(33px);
+}
+
+.arrow-icon-left {
+	transform: translateX(-33px);
+}
+
+
+
+@media (min-width: 768px) {
+	.arrow-icon-right {
+		transform: translateX(54px);
+	}
+
+	.arrow-icon-left {
+		transform: translateX(-54px);
+	}
+}
+
+@media (min-width: 992px) {
+	.arrow-icon-right {
+		transform: translateX(70px);
+	}
+
+	.arrow-icon-left {
+		transform: translateX(-70px);
+	}
+}
+
+@media (min-width: 1200px) {
+	.arrow-icon-right {
+		transform: translateX(84px);
+	}
+
+	.arrow-icon-left {
+		transform: translateX(-84px);
+	}
+}
+
+footer {
+	font-size: 14px;
+}
