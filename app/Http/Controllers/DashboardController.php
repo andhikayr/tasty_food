@@ -43,15 +43,16 @@ class DashboardController extends Controller
         $user->name = $request->name;
 
         if ($request->hasFile('image')) {
-            $path = public_path('/uploads/profile_image/').$user->image;
-            if (file_exists($path)) {
-                unlink($path);
+            if (file_exists('uploads/profile_image/' . $user->image)) {
+                unlink('uploads/profile_image/' . $user->image);
                 // Store the new image
-                $image = date('YmdHis'). '.' . $request->file('image')->extension();
-                Image::make($request->file('image'))->save(public_path('/uploads/profile_image/').$image);
+                $profil_gambar = $request->file('image');
+                $image = date('YmdHis') . '.' . $profil_gambar->extension();
+                $profil_gambar->move('uploads/profile_image', $image);
                 $user['image'] = $image;
             }
         }
+
 
         $user->save();
 
@@ -68,10 +69,10 @@ class DashboardController extends Controller
         ]);
 
         if (!Hash::check($request->current_password, auth::user()->password)) {
-            Alert::toast('Password sebelumnya tidak cocok','error')->autoClose(5000);
+            Alert::toast('Password sebelumnya tidak cocok', 'error')->autoClose(5000);
             return back();
         } else if (Hash::check($request->new_password, Auth::user()->password)) {
-            Alert::toast('Password baru anda sama dengan password lama anda','error')->autoClose(5000);
+            Alert::toast('Password baru anda sama dengan password lama anda', 'error')->autoClose(5000);
             return back();
         }
 
